@@ -1,18 +1,18 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.tooandy.blankspace</id>
-    <name>blank-space</name>
-    <vendor>tooandy</vendor>
+    <name>BlankSpace</name>
+    <vendor email="aniss@qq.com">tooandy</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.tooandy.blankspace.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.tooandy.blankspace.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
-    </applicationListeners>
+    <actions>
+        <action id="rightClickTransform" class="fun.aniss.blank.space.RightClickAction" text="添加空格"
+                description="中英文之间添加空格, 提高可读性">
+            <add-to-group group-id="EditorPopupMenu2" anchor="after" relative-to-action="CodeFormatGroup"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt U"/>
+        </action>
+    </actions>
 </idea-plugin>

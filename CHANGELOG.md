@@ -3,5 +3,5 @@
 # blank-space Changelog
 
 ## [Unreleased]
-### Added
-- Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+1. 快捷键默认为 `shift`+`ctrl`+`alt`+`U`, 当然也可以自己在 `Settings` 中更改
+2. 选中文字后, 点击右键, 可以直接选择 `添加空格` 对选中的文本进行处理
