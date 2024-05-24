@@ -11,7 +11,7 @@ import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.project.Project;
 import fun.aniss.blank.space.utils.RegexExpressionUtils;
 import fun.aniss.blank.space.utils.TransitionUtils;
-import org.apache.commons.lang.StringUtils;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * blank-space
@@ -23,7 +23,7 @@ import org.apache.commons.lang.StringUtils;
 public class RightClickAction extends AnAction {
 
     @Override
-    public void actionPerformed(AnActionEvent e) {
+    public void actionPerformed(@NotNull AnActionEvent e) {
         Application application = ApplicationManager.getApplication();
         application.runWriteAction(() -> {
             Project project = e.getProject();
@@ -40,7 +40,7 @@ public class RightClickAction extends AnAction {
         }
         SelectionModel selectionModel = editor.getSelectionModel();
         String selectedText = selectionModel.getSelectedText();
-        if (StringUtils.isBlank(selectedText)) {
+        if (selectedText == null || selectedText.isBlank()) {
             return;
         }
 
