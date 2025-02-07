@@ -6,6 +6,7 @@ fun environment(key: String) = providers.environmentVariable(key)
 
 plugins {
     id("java") // Java support
+    id("org.jetbrains.kotlinx.kover") version "0.7.6"  // 使用最新版本
     alias(libs.plugins.kotlin) // Kotlin support
     alias(libs.plugins.gradleIntelliJPlugin) // Gradle IntelliJ Plugin
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
@@ -48,13 +49,13 @@ changelog {
 }
 
 // Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
-koverReport {
-    defaults {
-        xml {
-            onCheck = true
-        }
-    }
-}
+//koverReport {
+//   defaults {
+//       xml {
+//           onCheck = true
+//       }
+//   }
+//}
 
 tasks {
     wrapper {
